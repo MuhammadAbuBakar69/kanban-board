@@ -24,6 +24,7 @@ export default function App() {
   const [newTaskPriority, setNewTaskPriority] = useState('Medium');
   const [draggedTaskId, setDraggedTaskId] = useState(null);
   const [dragOverColumn, setDragOverColumn] = useState(null);
+  const [priorityFilter, setPriorityFilter] = useState('All');
 
   useEffect(() => {
     localStorage.setItem('kanban_tasks', JSON.stringify(tasks));
@@ -90,6 +91,10 @@ export default function App() {
       task.id === taskId ? { ...task, status: targetStatus } : task
     ));
   };
+
+  const visibleTasks = priorityFilter === 'All'
+    ? tasks
+    : tasks.filter(task => task.priority === priorityFilter);
 
   return (
     <div className="kanban-app-container">
@@ -204,3 +209,4 @@ export default function App() {
     </div>
   );
 }
+
