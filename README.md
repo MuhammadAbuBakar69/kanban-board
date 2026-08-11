@@ -22,3 +22,6 @@ A feature-rich, drag-and-drop Kanban task management board built in React using 
 
 1. Copy `App.jsx` and `App.css` into your Vite React project.
 2. Run `npm run dev`.
+
+
+- **Priority Filter**: Quickly filter the board by High, Medium, or Low priority.
